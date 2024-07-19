@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save current buffer' })
+vim.keymap.set({ 'i', 'n', 'v' }, '<C-s>', '<Esc>:w<CR>', { desc = 'Save current buffer' })
 vim.keymap.set('n', '<C-q>', ':q<CR>', { desc = 'Close current buffer' })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Remove search highlights' })

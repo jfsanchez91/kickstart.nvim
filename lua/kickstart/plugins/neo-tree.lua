@@ -14,6 +14,7 @@ return {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    respect_gitignore = true,
     filesystem = {
       window = {
         mappings = {
