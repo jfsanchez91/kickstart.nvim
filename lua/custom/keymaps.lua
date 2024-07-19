@@ -32,3 +32,13 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent right in visual mode and stay i
 -- Easily split windows
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'Split [W]indow [V]ertically' })
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = 'Split [W]indow [H]orizontally' })
+
+-- Move line/block up/down
+vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected line/block up' })
+vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selected line/block down' })
+vim.keymap.set('n', '<C-k>', ':m .-2<CR>==', { desc = 'Move current line up' })
+vim.keymap.set('n', '<C-j>', ':m .+1<CR>==', { desc = 'Move current line down' })
+
+-- Duplicate line/block
+vim.keymap.set('v', '<C-d>', "y'>pgv", { desc = 'Duplicate selected block' })
+vim.keymap.set('n', '<C-d>', ':t.<CR>', { desc = 'Duplicate current line' })
