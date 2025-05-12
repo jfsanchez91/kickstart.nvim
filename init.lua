@@ -215,18 +215,6 @@ require('lazy').setup({
       end, { desc = '[S]earch [N]eovim files' })
     end,
   },
-  {
-    -- Painless neovim Java config
-    'nvim-java/nvim-java',
-    config = function()
-      require('java').setup {
-        jdk = {
-          -- install jdk using mason.nvim
-          auto_install = false,
-        },
-      }
-    end,
-  },
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -409,21 +397,6 @@ require('lazy').setup({
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
-        jdtls = {
-          settings = {
-            java = {
-              configuration = {
-                runtimes = {
-                  {
-                    name = 'JavaSE-21',
-                    path = '/home/jfsanchez/.sdkman/candidates/java/21.0.2-open',
-                    default = true,
-                  },
-                },
-              },
             },
           },
         },
