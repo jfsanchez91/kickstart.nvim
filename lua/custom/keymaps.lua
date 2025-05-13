@@ -42,3 +42,13 @@ vim.keymap.set('n', '<C-j>', ':m .+1<CR>==', { desc = 'Move current line down' }
 -- Duplicate line/block
 vim.keymap.set('v', '<C-d>', "y'>pgv", { desc = 'Duplicate selected block' })
 vim.keymap.set('n', '<C-d>', ':t.<CR>', { desc = 'Duplicate current line' })
+
+-- Map Ctrl + / to toggle line comment in normal mode
+vim.keymap.set('n', '<C-/>', function()
+  require('Comment.api').toggle.linewise.current()
+end, { noremap = true, silent = true })
+
+-- Map Ctrl + / to toggle comment in visual mode
+vim.keymap.set('v', '<C-/>', function()
+  require('Comment.api').toggle.linewise(vim.fn.visualmode())
+end, { noremap = true, silent = true })
